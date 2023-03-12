@@ -54,13 +54,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="IServices\" />
 	  <Folder Include="IViews\" />
 	  <Folder Include="Resources\Styles\" />
-	  <Folder Include="ViewControls\" />
-	  <Folder Include="ViewModels\Base\" />
-	  <Folder Include="Services\" />
-	  <Folder Include="Views\Base\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Maui.Apps.Framework\Maui.Apps.Framework.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="ViewControls\Common\ErrorIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewControls\Common\LoadingIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Base\PageBase.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

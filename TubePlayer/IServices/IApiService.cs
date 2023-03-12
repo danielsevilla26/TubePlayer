@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TubePlayer.IServices
+﻿namespace TubePlayer.IServices
 {
-    internal interface IApiService
+    public interface IApiService
     {
+        Task<VideoSearchResult> SearchVideos(string searchQuery, string nextPageToken = "");
     }
 }
