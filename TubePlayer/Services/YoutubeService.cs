@@ -22,5 +22,14 @@ namespace TubePlayer.Services
 
             return result;
         }
+
+        public async Task<ChannelSearchResult> GetChannels(string channelIDs)
+        {
+            var resourceUri = $"channels?part=snippet,statistics&maxResults=10&key={Constants.ApiKey}&id={channelIDs}";
+
+            var result = await GetAsync<ChannelSearchResult>(resourceUri, 4); //Cached for 4 hours
+
+            return result;
+        }
     }
 }

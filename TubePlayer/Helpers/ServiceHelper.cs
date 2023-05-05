@@ -1,6 +1,6 @@
 ﻿namespace TubePlayer.Helpers
 {
-    public class ServiceHelper
+    public static class ServiceHelper
     {
         public static TService GetService<TService>() => //test
         Current.GetService<TService>();

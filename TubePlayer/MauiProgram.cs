@@ -28,6 +28,25 @@ public static class MauiProgram
 #endif
                      });
 
+        //Register Services
+        RegisterAppServices(builder.Services);
+
         return builder.Build();
+    }
+
+    public static void RegisterAppServices(IServiceCollection services)
+    {
+        //Add Platform specific Dependencies
+        services.AddSingleton<IConnectivity>(Connectivity.Current);
+
+        //Register Cache Barrel
+        Barrel.ApplicationId = Constants.ApplicationId;
+        services.AddSingleton<IBarrel>(Barrel.Current);
+
+        //Register API Service
+        services.AddSingleton<IApiService, YoutubeService>();
+
+        //Register ViewModels
+        services.AddSingleton<StartPageViewModel>();
     }
 }
